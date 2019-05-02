@@ -6,3 +6,15 @@ main {
     display: flex;
     flex-wrap: wrap;
 }
+
+@media screen and (max-width: 1200px){
+    main {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 900px){
+    main {
+        font-size: 75%;
+    }
+}

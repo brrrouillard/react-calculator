@@ -1,6 +1,12 @@
 .title {
-    font-size: 500%;
+    font-size: 600%;
     font-weight: 200;
     color: #2a324b;
     margin: 8%;
+    text-align: center;
+    margin: 4%;
+}
+
+header {
+    width: 60vw;
 }
