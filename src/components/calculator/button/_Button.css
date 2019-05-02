@@ -6,6 +6,7 @@
     flex-direction: row;
     height: 16%;
     cursor: pointer;
+    font-weight: 200;
 }
 
 .button-ac {
@@ -25,4 +26,9 @@
 
 .button-zero {
     width: 50%;
+    border-bottom-left-radius: 15%;
+}
+
+.button-equals {
+    border-bottom-right-radius: 20%;
 }

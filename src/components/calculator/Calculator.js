@@ -15,7 +15,7 @@ export class Calculator extends Component {
           buttonType: "button-ac"
         },
         {
-          value: "±",
+          value: "÷",
           buttonType: "button-operations"
         },
         {
@@ -111,7 +111,7 @@ export class Calculator extends Component {
     expression = expression.split("");
     const res = [];
     expression.map(char => {
-      if (char === "±") res.push("/");
+      if (char === "÷") res.push("/");
       else if (char === "x") res.push("*");
       else res.push(char);
     });
