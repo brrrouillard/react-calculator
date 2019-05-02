@@ -8,6 +8,12 @@
     cursor: pointer;
     font-weight: 200;
     outline: 1.5px solid #c6e2e9;
+    border-radius: 2%;
+}
+
+.button:active {
+    transition-duration: 125ms;
+    transform: translateY(2.5px);
 }
 
 .button-ac {
