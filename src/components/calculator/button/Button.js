@@ -9,7 +9,9 @@ export class Button extends Component {
     }
   render() {
     return (
-      <div class={this.props.buttonType + " button"}>
+      <div 
+      className={this.props.buttonType + " button"}
+      onClick={() => this.props.handleButtonClick(this.props.value)}>
         <span>{ this.props.value }</span>
       </div>
     )

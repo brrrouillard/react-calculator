@@ -6,7 +6,7 @@ export class Header extends Component {
   render() {
     return (
       <header>
-        <h1 class="title">Calculator</h1>
+        <h1 className="title">Calculator</h1>
       </header>
     );
   }
