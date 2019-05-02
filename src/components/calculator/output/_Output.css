@@ -1,13 +1,20 @@
+.output-container {
+    height: 20%;
+}
+
 .output {
-    width: 99.6%;
+    width: 90%;
     border-top-right-radius: 5%;
     border-top-left-radius: 5%;
-    font-size: 550%;
+    font-size: 650%;
     background-color: #98adc0;
     outline: none;
     border: none;
     color: whitesmoke;
     font-weight: 100;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 100%;
 }
 
 input:focus {
