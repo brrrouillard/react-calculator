@@ -1,0 +1,28 @@
+.button {
+    font-size: 550%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 16%;
+    cursor: pointer;
+}
+
+.button-ac {
+    background-color: #2a324b;
+    color: white;
+    width: 75%;
+}
+.button-operations {
+    background-color: #ffcaaf;
+    width: 25%;
+}
+
+.button-numbers {
+    background-color: #bfcfdf;
+    width: 25%;
+}
+
+.button-zero {
+    width: 50%;
+}

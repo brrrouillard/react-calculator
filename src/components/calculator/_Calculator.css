@@ -3,4 +3,6 @@ main {
     height: 75vh;
     background: #a7bed3;
     border-radius: 5%;
+    display: flex;
+    flex-wrap: wrap;
 }
