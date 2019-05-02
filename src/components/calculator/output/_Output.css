@@ -1,0 +1,13 @@
+.output {
+    width: 99.6%;
+    border-radius: 5%;
+    font-size: 550%;
+    background-color: #98adc0;
+    outline: none;
+    border: none;
+    color: whitesmoke;
+}
+
+input:focus {
+    outline: none;
+}
