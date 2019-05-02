@@ -31,7 +31,7 @@ export class Calculator extends Component {
           buttonType: "button-numbers"
         },
         {
-          value: "X",
+          value: "x",
           buttonType: "button-operations"
         },
         {
@@ -79,15 +79,45 @@ export class Calculator extends Component {
           buttonType: "button-operations button-equals"
         }
       ],
-      output: "10"
+      output: ""
     };
   }
 
   handleButtonClick = value => {
-    const currentOutput = this.state.output;
-    this.setState({ output: currentOutput + value });
+    switch (value) {
+      case "ac":
+        this.clearOutput();
+        break;
+      case "=":
+        this.compute();
+        break;
+      default:
+        const currentOutput = this.state.output;
+        this.setState({ output: currentOutput + value });
+    }
   };
-  
+
+  clearOutput = () => {
+    this.setState({ output: "" });
+  };
+
+  compute = () => {
+    const result = eval(this.replaceSymbols(this.state.output));
+    this.setState({ output: result });
+  };
+
+  // Replaces X by * and ± by / for computing
+  replaceSymbols = expression => {
+    expression = expression.split("");
+    const res = [];
+    expression.map(char => {
+      if (char === "±") res.push("/");
+      else if (char === "x") res.push("*");
+      else res.push(char);
+    });
+    return res.join("");
+  };
+
   render() {
     return (
       <main>
