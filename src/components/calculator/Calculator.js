@@ -84,6 +84,7 @@ export class Calculator extends Component {
   }
 
   handleButtonClick = value => {
+    const currentOutput = this.state.output;
     switch (value) {
       case "ac":
         this.clearOutput();
@@ -91,8 +92,11 @@ export class Calculator extends Component {
       case "=":
         this.compute();
         break;
+      case ",":
+        if (this.state.output.includes(",")) break;
+        this.setState({ output: currentOutput + value});
+        break;
       default:
-        const currentOutput = this.state.output;
         this.setState({ output: currentOutput + value });
     }
   };
@@ -106,13 +110,14 @@ export class Calculator extends Component {
     this.setState({ output: result });
   };
 
-  // Replaces X by * and ± by / for computing
+  // Replaces X by *, ± by / and , by . for computing
   replaceSymbols = expression => {
     expression = expression.split("");
     const res = [];
     expression.map(char => {
       if (char === "÷") res.push("/");
       else if (char === "x") res.push("*");
+      else if (char === ",") res.push(".");
       else res.push(char);
     });
     return res.join("");

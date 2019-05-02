@@ -10,3 +10,9 @@
 header {
     width: 60vw;
 }
+
+@media screen and (max-width: 1200px){
+    .title {
+        font-size: 550%;
+    }
+}
