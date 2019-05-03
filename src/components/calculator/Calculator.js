@@ -11,7 +11,7 @@ export class Calculator extends Component {
     this.state = {
       buttons: [
         {
-          value: "ac",
+          value: "clear",
           buttonType: "button-ac"
         },
         {
@@ -71,7 +71,7 @@ export class Calculator extends Component {
           buttonType: "button-numbers button-zero"
         },
         {
-          value: ",",
+          value: ".",
           buttonType: "button-numbers button-coma"
         },
         {
@@ -83,18 +83,18 @@ export class Calculator extends Component {
     };
   }
 
+  componentWillMount(){
+      this.addKeyboardHandler();
+  }
+
   handleButtonClick = value => {
     const currentOutput = this.state.output;
     switch (value) {
-      case "ac":
+      case "clear":
         this.clearOutput();
         break;
       case "=":
         this.compute();
-        break;
-      case ",":
-        if (this.state.output.includes(",")) break;
-        this.setState({ output: currentOutput + value});
         break;
       default:
         this.setState({ output: currentOutput + value });
@@ -117,11 +117,16 @@ export class Calculator extends Component {
     expression.map(char => {
       if (char === "÷") res.push("/");
       else if (char === "x") res.push("*");
-      else if (char === ",") res.push(".");
       else res.push(char);
     });
     return res.join("");
   };
+
+  addKeyboardHandler = () => {
+    document.querySelector('body').addEventListener("onkeypress", event => {
+        console.log(event);
+    });
+  }
 
   render() {
     return (

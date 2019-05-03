@@ -13,7 +13,7 @@
 
 .button:active {
     transition-duration: 125ms;
-    transform: translateY(2.5px);
+    transform: translateY(1.5px);
 }
 
 .button-ac {
